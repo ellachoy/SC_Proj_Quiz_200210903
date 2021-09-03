@@ -97,10 +97,10 @@ let choice=elt.choice
                 button.style.backgroundColor = "red";
               
             }
-        })
+        });
 
 
-    })
+    });
 
 });
 
