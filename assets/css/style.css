@@ -9,9 +9,9 @@ body {
   align-items: center;
 }
 button {
+  width: 15%;
   background-color: #000;
   color: #fff;
   padding: 15px;
   margin: 30px;
 }
-

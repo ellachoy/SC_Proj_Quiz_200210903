@@ -62,38 +62,46 @@ let data=[
 ]
 
 // console.log(data)
-data.forEach(quiz => {
 
+data.forEach(elt=>{
+// 1.body 
+let section=document.createElement("section")
+document.body.appendChild(section);
 
-    let article = document.createElement("article");
-    document.querySelector("body").appendChild(article);
+// 2.input to body
+let img=document.createElement("img")
+section.appendChild(img);
 
-    let img = document.createElement("img");
-    article.appendChild(img);
+// 3.input text to body
+let h1=document.createElement("h1")
+section.appendChild(h1);
 
-    let h1 = document.createElement("h1");
-    article.appendChild(h1);
+img.src=elt.url;
+h1.innerHTML=elt.question;
+ 
+let choice=elt.choice
 
-    let answer = quiz.choice;
+// buttons =choice
+    choice.forEach(choice=>{
 
-    img.src = quiz.url;
-    h1.innerHTML = quiz.question;
-
-    answer.forEach(choice => {
-
-        let button = document.createElement('button');
-        article.appendChild(button);
+        // input btn to body
+        let button=document.createElement("button")
+        section.appendChild(button);
         button.innerHTML = choice;
 
         button.addEventListener('click', () => {
 
-            if (choice === quiz.answer) {
+            if (choice == elt.answer) {
                 button.style.backgroundColor = "green";
             } else {
                 button.style.backgroundColor = "red";
-                button.style.display = "none";
+              
             }
         })
+
+
     })
-})
+
+});
+
 
